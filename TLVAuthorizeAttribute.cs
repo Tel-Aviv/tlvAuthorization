@@ -9,7 +9,7 @@ using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 
-namespace Products.OAuthProvider
+namespace TLV.OAuth
 {
     public class TLVAuthorizeAttribute: AuthorizeAttribute
     {
