@@ -1,5 +1,5 @@
 # tlvAuthorization
-[Authorize] attribute for C# Web API services that use corporate TLV OAuth
+[Authorize] attribute for C# Web API services that want to validate the JWTs issued by TLV OAuth system
 
 ## How to use
 1. Include this file in your C# project
