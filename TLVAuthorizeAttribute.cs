@@ -36,6 +36,7 @@ namespace TLV.OAuth
                     if( !isValidRequest(jwt) )
                         HandleUnauthorizedRequest(actionContext);
 
+                    // see https://stackoverflow.com/questions/31740224/asp-net-web-api-set-custom-iidentity-or-iprincipal/31743422
                     return;
                 }
             }
