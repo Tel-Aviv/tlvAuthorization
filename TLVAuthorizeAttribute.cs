@@ -114,18 +114,19 @@ namespace tagmulim.api
 
         private bool isValidRequest(string jwt)
         {
-            return true;
-
-            //using (var httpClient = new HttpClient())
-            //{
-            //    var content = new FormUrlEncodedContent(new[]
-            //    {
-            //        new KeyValuePair<string, string>("token", jwt)
-            //    });
-            //    content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
-            //    var response = httpClient.PostAsJsonAsync(validationEndpoint, content).Result;
-            //    return response.IsSuccessStatusCode;
-            //}
+            using (var httpClient = new HttpClient())
+            {
+                var postData = new[] {
+                                       new KeyValuePair<string, string>("token", jwt)
+                                     };
+                using (var content = new FormUrlEncodedContent(postData)
+                )
+                {
+                    content.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
+                    var response = httpClient.PostAsync(validationEndpoint, content).Result;
+                    return response.IsSuccessStatusCode;
+                }
+            }
         }
     }
 
