@@ -54,7 +54,7 @@ namespace tagmulim.api
 
     public class TLVAuthorizeAttribute : AuthorizeAttribute
     {
-        public Uri validationEndpoint { get; private set; }
+        private Uri validationEndpoint { get; private set; }
 
         public TLVAuthorizeAttribute()
         {
